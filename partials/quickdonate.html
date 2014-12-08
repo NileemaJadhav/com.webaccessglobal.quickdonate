@@ -13,7 +13,7 @@ Controller: QuickDonationCtrl
             <input ng-model="formInfo.donateAmount" type="radio" name="donate-amount-{{price.name}}" id="donate-amount" data-parsley-multiple="donate-amount" ng-checked="{{price.is_default}}" value="{{price.amount}}" radio-icon/><label ng-class="{'active':amountActive(price.amount) || amountDefault(price.amount, price.is_default)}" radio-label>{{currencySymbol}} {{price.amount}}</label>
           </li>
           <li class="pull-left other-amount" ng-if="otherAmount">
-            <span class="currency-input-addon">$</span>
+            <span class="currency-input-addon">{{currencySymbol}}</span>
             <input ng-model="formInfo.otherAmount" class="form-control" type="text" placeholder="Other" ng-click="amountSelected()" ng-keyup="formInfo.donateAmount=formInfo.otherAmount"/>
           </li>
         </ul>
